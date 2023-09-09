@@ -2,8 +2,14 @@ import { useReducer,useRef,useState } from "react";
 import { Routes,Route } from "react-router-dom";
 import { MyContext } from "./Contextor";
 
-import aloeh from "./images/aloeh.jpg";
-import aloeh1 from "./images/aloeh-1.png";
+import aloe1 from "./images/aloe-1.png";
+import aloe2 from "./images/aloe-2.png";
+import aloe3 from "./images/aloe-3.png";
+import aloe4 from "./images/aloe-4.png";
+import aloe5 from "./images/aloe-5.png";
+import aloe6 from "./images/aloe-6.png";
+import aloe7 from "./images/aloe-7.png";
+//import * as img from "./images";
 
 import Home from "./src/Home";
 import Category from "./src/Category";
@@ -11,6 +17,7 @@ import Product from "./src/Product";
 import Nopage from "./src/Nopage";
 import Layout from "./src/Layout";
 import Cart from "./src/Cart";
+import Footer from "./src/Footer";
 
 export default function App(props) {
 
@@ -22,11 +29,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe1,
+                aloe1,
+                aloe1,
+                aloe1,
+                aloe1
             ]
         },
         {
@@ -36,11 +43,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                {aloeh1},
-                {aloeh1},
-                {aloeh1},
-                {aloeh1},
-                {aloeh1}
+                aloe2,
+                aloe2,
+                aloe2,
+                aloe2,
+                aloe2
             ]
         },
         {
@@ -50,11 +57,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe3,
+                aloe3,
+                aloe3,
+                aloe3,
+                aloe3
             ]
         },
         {
@@ -64,11 +71,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe4,
+                aloe4,
+                aloe4,
+                aloe4,
+                aloe4
             ]
         },
         {
@@ -78,11 +85,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe5,
+                aloe5,
+                aloe5,
+                aloe5,
+                aloe5
             ]
         },
         {
@@ -92,11 +99,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe6,
+                aloe6,
+                aloe6,
+                aloe6,
+                aloe6
             ]
         },
         {
@@ -106,11 +113,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe7,
+                aloe7,
+                aloe7,
+                aloe7,
+                aloe7
             ]
         },
         {
@@ -120,11 +127,11 @@ export default function App(props) {
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh,
-                aloeh
+                aloe3,
+                aloe3,
+                aloe3,
+                aloe3,
+                aloe3
             ]
         }
     ]
@@ -181,7 +188,7 @@ export default function App(props) {
                         <Route path="category" element={<Category/>}>
                         
                         </Route>
-                        <Route path="product" element={<Product/>}>
+                        <Route path="product/:id" element={<Product/>}>
                         
                         </Route>
                         <Route path="cart" element={<Cart/>}>
