@@ -9,6 +9,7 @@ import aloe4 from "./images/aloe-4.png";
 import aloe5 from "./images/aloe-5.png";
 import aloe6 from "./images/aloe-6.png";
 import aloe7 from "./images/aloe-7.png";
+import aloe8 from "./images/aloeh.jpg";
 //import * as img from "./images";
 
 import Home from "./src/Home";
@@ -24,12 +25,11 @@ export default function App(props) {
     const plantlist = [
         {
             name:"aloe",
-            price:15.92,
+            price:6000,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe1,
                 aloe1,
                 aloe1,
                 aloe1,
@@ -38,12 +38,11 @@ export default function App(props) {
         },
         {
             name:"aloe",
-            price:15.92,
+            price:9800,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe2,
                 aloe2,
                 aloe2,
                 aloe2,
@@ -52,12 +51,11 @@ export default function App(props) {
         },
         {
             name:"aloe",
-            price:15.92,
+            price:3500,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe3,
                 aloe3,
                 aloe3,
                 aloe3,
@@ -69,9 +67,8 @@ export default function App(props) {
             price:15.92,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe4,
                 aloe4,
                 aloe4,
                 aloe4,
@@ -83,9 +80,8 @@ export default function App(props) {
             price:15.92,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe5,
                 aloe5,
                 aloe5,
                 aloe5,
@@ -97,9 +93,8 @@ export default function App(props) {
             price:15.92,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe6,
                 aloe6,
                 aloe6,
                 aloe6,
@@ -111,9 +106,8 @@ export default function App(props) {
             price:15.92,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe7,
                 aloe7,
                 aloe7,
                 aloe7,
@@ -125,27 +119,30 @@ export default function App(props) {
             price:15.92,
             dimensions:"18*35*21",
             availableQty:40,
-            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
+            description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe3,
-                aloe3,
-                aloe3,
-                aloe3,
-                aloe3
+                aloe8,
+                aloe8,
+                aloe8,
+                aloe8
             ]
         }
     ]
 
-    const [cart,setCart] = useState([]);
+    // const [cart,setCart] = useState([{"item":0,"qty":2}]);
 
-    const addToCart = (id) => {
-        setCart([...cart,id]);
-    }
+    // const addToCart = (id,) => {
+    //     let itemId = id;
+    //     let newCart = [...cart];
+    //     setCart([...newCart,{"item":itemId,"qty":qty}]);
+    // }
 
-    const removeFromCart = (id,olCart) => {
-        let oldCart = olCart.splice(id,1);
-        setCart([...oldCart]);
-    }
+    // const removeFromCart = (id,olCart) => {
+    //     let oldCart = olCart.splice(id,1);
+    //     setCart([...oldCart]);
+    // }
+    
+
     // function handleCart(state = cart,action) {
     //     switch (action.type) {
     //         case "ADD_TO_CART":
@@ -200,6 +197,5 @@ export default function App(props) {
                     </Route>
                 </Routes>
             </MyContext.Provider>
-            
     )
 }

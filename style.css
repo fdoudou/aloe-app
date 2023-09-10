@@ -1,0 +1,165 @@
+body {
+    margin: 0px;
+}
+
+.jma-anim-zoom:hover { 
+    position: relative; 
+    animation:anime-zoom 1.5s ease-in-out 0s 1 normal none running ; }
+
+@keyframes anime-zoom { 
+  0%,100% { transform:scale(1.5,1.5); }
+  50% { transform:scale(1,1); }
+}
+
+.cs-link, a {
+    text-decoration: none;
+    color:black;
+}
+
+.jma-round {
+    border-radius:30px;
+}
+
+.jma-rounded {
+    border-radius:6px;
+}
+
+.jma-rounded-16 {
+    border-radius:16px;
+}
+
+.jma-squared {
+    border-radius:1px;
+}
+
+.jma-mrg-left {
+    margin-left:16px;
+}
+
+.jma-mrg-right {
+    margin-right:16px;
+}
+
+.jma-mrg-tb {
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.jma-mrg {
+    margin: 8px 8px;
+}
+
+.jma-mrg-lr {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.jma-mrg-16 {
+    margin: 16px 16px;
+}
+
+.jma-mrg-32 {
+    margin: 32px 32px;
+}
+
+.jma-mrg-64 {
+    margin: 64px 64px;
+}
+
+.jma-mrg-bottom {
+    margin: 16px;
+}
+
+.jma-mrg-top {
+    margin: 16px;
+}
+
+.jma-pdg {
+    padding: 5px 5px;
+}
+
+.jma-pdg-8 {
+    padding: 8px 8px;
+}
+
+.jma-pdg-16 {
+    padding: 16px 16px;
+}
+
+.jma-pdg-32 {
+    padding: 32px 32px;
+}
+
+.jma-pdg-64 {
+    padding: 64px 64px;
+}
+
+.jma-pdg-top {
+    padding-top:16px;
+}
+
+.jma-pdg-bottom {
+    padding-bottom:16px;
+}
+
+.jma-pdg-left {
+    padding-left:16px;
+}
+
+.jma-pdg-right {
+    padding-right:16px;
+}
+
+[class*='grid-c'], [class*='grid-m'], [class*='grid-r'] {
+    display:grid;
+    gap: 0px 10px;
+}
+
+.row-gap {
+    row-gap:10px
+}
+
+.row-gap-1 {
+    row-gap:16px
+}
+
+.row-gap-2 {
+    row-gap:32px;
+}
+
+.row-gap-3 {
+    row-gap:64px;
+}
+
+.column-gap {
+    column-gap:10px
+}
+
+.column-gap-1 {
+    column-gap:16px
+}
+
+.column-gap-2 {
+    column-gap:32px
+}
+
+.column-gap-3 {
+    column-gap:64px;
+}
+
+@media (min-width:791px) {
+    .grid-c-2 {
+        grid-template-columns:auto auto;
+    }
+}
+
+@media (max-width:790px) {
+    [class*='grid-c-'] {
+        grid-template-columns:100% ;
+        gap: 10px 0px;
+    }
+
+    .grid-m-2 {
+        grid-template-columns:auto auto;
+    }
+}
