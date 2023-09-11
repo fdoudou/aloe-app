@@ -1,5 +1,6 @@
 import { Outlet,Link } from "react-router-dom";
 import aloeh from "../images/aloeh.jpg";
+import Cart from "./Cart";
 import Footer from "./Footer";
 
 const Category = () => {
@@ -104,6 +105,8 @@ const Category = () => {
                     </div>
                 </div>
             </div>
+
+            <Cart/>
             <Footer/>
         </>
     )

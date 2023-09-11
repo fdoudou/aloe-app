@@ -1,6 +1,9 @@
 import { Outlet,Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { MyContext } from "../Contextor";
+import { useContext } from "react";
 
 const Layout = () => {
+    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
     return (
         <div style={{width:"100%",height:"75px",background:"skyblue",zIndex:"9"}}>
             <div className="jma-pdg-16 jma-mrg-">
@@ -19,6 +22,9 @@ const Layout = () => {
                 <span className="jma-pdg-16">
                     <Link to="/cart">cart</Link>
                 </span>
+                <button className="jma-pdg-16" onClick={()=>{viewCart()}}>
+                    cart
+                </button>
             </div>
             <Outlet/>
         </div>

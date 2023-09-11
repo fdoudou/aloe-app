@@ -2,15 +2,16 @@ import { Outlet,Link } from "react-router-dom";
 import { MyContext } from "../Contextor";
 import { useContext,useState } from "react";
 import frontimage from "../images/aloeh.jpg";
+import Cart from "./Cart";
 import Footer from "./Footer";
 
 const Home = () => {
 
-    const {plantlist} = useContext(MyContext);
+    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
     const productList = plantlist.map((plant,index) => {
         return (
-            <div>
+            <div key={index}>
                 <div >
                     <Link to={`product/${index}`}>
                         <img src={plant.images[0]} style={{width:"200px",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
@@ -21,7 +22,7 @@ const Home = () => {
                     </Link>
                 </div>
                 
-                <button>Ajouter aux favoris</button>
+                <button onClick={()=>{viewCart();addToCart(index,1)}}>Ajouter aux favoris</button>
 
             </div>
         )
@@ -46,6 +47,7 @@ const Home = () => {
             </div>
 
             </div>
+            <Cart/>
             <Footer/>
         </>
     )

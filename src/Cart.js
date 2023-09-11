@@ -1,9 +1,48 @@
 import { Outlet,Link } from "react-router-dom";
+import { MyContext } from "../Contextor";
+import { useContext } from "react";
+
 
 const Cart = () => {
+    
+
+    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
+
+    const myCart = cart.map((c,index)=>{
+        return (
+            <div key={index} className="grid-c-2 grid-m-2" style={{height:"150px"}}>
+                <img src={plantlist[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+
+                <div>
+                    <div onClick={()=>{removeFromCart(index)}} className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name}</div>
+                    <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plantlist[c.item].price} FCFA</div>
+
+                    <div className="jma-mrg-tb">
+                        <button onClick={()=>{updateQty(index,"MINUS_ONE")}} className="jma-pdg-8">-</button>
+                        <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-8" value={c.qty} min="1"/>
+                        <button onClick={()=>{updateQty(index,"ADD_ONE")}} className="jma-pdg-8">+</button>
+                    </div>
+                </div>
+            </div>
+        )
+    });
+
     return (
         <div>
             <button onClick={()=>{}}>Go back</button>
+            <div className='modal-parent' id='z-modal-popup'>
+                        <div className='modal-underlay' onClick={viewCart}></div>
+                        <div className='jma-modal jma-anim-right'>
+                            <h4>My Cart <button onClick={viewCart}>&times;</button></h4>
+                            
+
+                            <div>
+                                {myCart}
+                                {cart.length >= 1 && <button onClick={()=>{}} className="jma-mrg-bottom jma-pdg-16 jma-anim-zoom">Acheter maintenant</button>}
+                                {cart.length === 0 && <h2 className="jma-mrg-bottom jma-pdg-16">Votre liste de favoris est vide!</h2>}
+                            </div>
+                        </div>
+                    </div>
         </div>
     )
 }

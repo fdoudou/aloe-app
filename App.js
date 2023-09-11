@@ -176,6 +176,15 @@ export default function App(props) {
     // }
 
     //const initialState = 
+    function viewCart (target) {
+        //document.querySelector(target).classList.toggle('jma-show');
+        if (document.querySelector('#z-modal-popup').className === 'modal-parent') {
+            document.querySelector('#z-modal-popup').className = 'jma-show';
+        }   else {
+            document.querySelector('#z-modal-popup').className = 'modal-parent';
+        }
+    }
+    
     
     const [cart,setCart] = useState([]);
 
@@ -206,7 +215,7 @@ export default function App(props) {
     }
 
     return (
-            <MyContext.Provider value={{plantlist,cart,addToCart,removeFromCart,updateQty}}>
+            <MyContext.Provider value={{plantlist,cart,addToCart,removeFromCart,updateQty,viewCart}}>
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}>
