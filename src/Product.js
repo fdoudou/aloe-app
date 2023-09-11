@@ -6,9 +6,21 @@ import Footer from "./Footer";
 import "../style.css";
 import { useState } from "react";
 
+
+
 const Product = () => {
+
+    function viewCart (target) {
+        //document.querySelector(target).classList.toggle('jma-show');
+        if (document.querySelector('#z-modal-popup').className === 'modal-parent') {
+            document.querySelector('#z-modal-popup').className = 'jma-show';
+        }   else {
+            document.querySelector('#z-modal-popup').className = 'modal-parent';
+        }
+    }
+
     const {id} = useParams();
-    const {plantlist} = useContext(MyContext);
+    const {plantlist,cart,addToCart,removeFromCart} = useContext(MyContext);
 
     const [quantity,setQuantity] = useState(1);
 
@@ -20,19 +32,24 @@ const Product = () => {
         setQuantity(quantity - 1);
     }
 
-    const [cart,setCart] = useState([{"item":1,"qty":2}]);
+    const myCart = cart.map((c)=>{
+        return (
+            <div className="grid-c-2" style={{height:"150px"}}>
+                <img src={plantlist[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
 
-    const addToCart = (id,qty) => {
-        //let itemId = id;
-        let newCart = [...cart];
-        setCart([...newCart,{"item":id,"qty":qty}]);
-        //setCart([...newCart,{"item":itemId,"qty":quantity}]);
-    }
+                <p onClick={()=>{removeFromCart(c.item)}}>
+                    <div className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name}</div>
+                    <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plantlist[c.item].price} FCFA</div>
 
-    const removeFromCart = (id,olCart) => {
-        let oldCart = olCart.splice(id,1);
-        setCart([...oldCart]);
-    }
+                    <div className="jma-mrg-tb">
+                        <button onClick={minusOne} className="jma-pdg-8">-</button>
+                        <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-8" value={quantity} min="1"/>
+                        <button onClick={addOne} className="jma-pdg-8">+</button>
+                    </div>
+                </p>
+            </div>
+        )
+    });
 
     const imagesThumbnails = plantlist[id].images.map((img,index)=> {
         return (
@@ -40,14 +57,11 @@ const Product = () => {
         )
     })
 
-    const myCart = cart.map((c)=>{
-        return cart[0].item + " " + cart[0].qty;
-    })
 
     return (
             <>  
                 <div>
-                    My cart: {myCart}
+                    My cart: 
                 </div>
                     <div className="grid-c-2 column-gap-3 jma-mrg-tb " style={{position:"relative",margin:"auto 50px",transform:""}}>
                     <div style={{height:"550px"}}>
@@ -72,12 +86,12 @@ const Product = () => {
 
                         <div className="grid-c-1">
                             <div className="jma-mrg-tb">
-                                <button onClick={minusOne} className="jma-pdg-16">-</button>
+                                <button onClick={addToCart} className="jma-pdg-16">-</button>
                                 <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-16" value={quantity} min="1"/>
                                 <button onClick={addOne} className="jma-pdg-16">+</button>
                             </div>
 
-                            <button onClick={addToCart} className="jma-pdg-16 jma-anim-zoom">Ajouter aux favoris</button>
+                            <button onClick={()=>{viewCart();addToCart(id,quantity)}} className="jma-pdg-16 jma-anim-zoom">Ajouter aux favoris</button>
                         </div>
                         
                         <details className="jma-mrg-tb" open>
@@ -98,9 +112,21 @@ const Product = () => {
                         </p>
                         </div>
                     </div>
+
+                    <div className='modal-parent' id='z-modal-popup'>
+                        <div className='modal-underlay' onClick={viewCart}></div>
+                        <div className='jma-modal jma-anim-right'>
+                            <h4>My Cart</h4>
+                            <button onClick={viewCart}>&times;</button>
+
+                            <div>
+                                {myCart}
+                                <button onClick={()=>{}} className="jma-mrg-bottom jma-pdg-16 jma-anim-zoom">Acheter maintenant</button>
+                            </div>
+                        </div>
+                    </div>
                 <Footer/>
             </>
-            
     )
 }
 

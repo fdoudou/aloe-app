@@ -174,9 +174,27 @@ export default function App(props) {
     //             return state;
     //     }
     // }
+
+    //const initialState = 
     
+    const [cart,setCart] = useState([]);
+
+    const addToCart = (id,qty) => {
+        //let itemId = id;
+        //const newCart = [...cart];
+        setCart([...cart,{"item":id,"qty":qty}]);
+        //setCart([...newCart,{"item":itemId,"qty":quantity}]);
+    }
+
+    const removeFromCart = (id) => {
+        const oldCart = cart.splice(id,1);
+        setCart([...oldCart]);
+    }
+
+    
+
     return (
-            <MyContext.Provider value={{plantlist}}>
+            <MyContext.Provider value={{plantlist,cart,addToCart,removeFromCart}}>
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}>

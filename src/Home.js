@@ -16,7 +16,7 @@ const Home = () => {
                         <img src={plant.images[0]} style={{width:"200px",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>
-                            <span>{plant.price}</span>
+                            <span>{plant.price} FCFA</span>
                         </p>
                     </Link>
                 </div>

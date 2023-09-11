@@ -2,7 +2,7 @@ import { Outlet,Link, BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="jma-pdg-16" style={{width:"100%",height:"200px",background:"skyblue",zIndex:"9",position:"relative",bottom:"0px"}}>
+        <div className="jma-pdg-16" style={{width:"100%",height:"200px",background:"skyblue",position:"relative",bottom:"0px"}}>
             <div>
                 <span className="jma-pdg-16">
                     <Link to="/">Home</Link>

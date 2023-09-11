@@ -2,6 +2,32 @@ body {
     margin: 0px;
 }
 
+.jma-hide {
+    display:none;
+}
+
+.jma-show {
+    display:block;
+}
+
+.jma-anim-left { 
+    position: relative; 
+    animation:anime-left 0.4s ease 0s 1 normal none running ; }
+
+@keyframes anime-left { 
+  0% { left: -300px; opacity: 0; }
+  100% { left: 0px; opacity: 1; }
+}
+
+.jma-anim-right { 
+    position: relative; 
+    animation:anime-right 0.4s ease 0s 1 normal none running ; }
+
+@keyframes anime-right { 
+  0% { right: -300px; opacity: 0; }
+  100% { right: 0px; opacity: 1; }
+}
+
 .jma-anim-zoom:hover { 
     position: relative; 
     animation:anime-zoom 1.5s ease-in-out 0s 1 normal none running ; }
@@ -161,5 +187,56 @@ body {
 
     .grid-m-2 {
         grid-template-columns:auto auto;
+    }
+}
+
+.jma-modal {
+    position: fixed;
+    z-index: 39;
+    background: #fff;
+    /* border-radius:11px; */
+    width: 40%;
+    height:100%;
+    right: 0%;
+    /* transform: translate(-50%,-40%); */
+    padding: 16px;
+    top: 0%;
+    overflow-x: none;
+    overflow-y: scroll;
+    display: inherit;
+    border: 1px solid #eee;
+}
+
+.modal-underlay {
+    background:rgba(0,0,1,0.5);
+    position: absolute;
+	z-index: 33;
+	top:0px;
+	bottom:0px;
+	left: 0px;
+	right: 0px;
+}
+
+.jma-modal>span {
+    cursor:pointer;
+}
+
+.modal-parent {
+    background:rgba(0,0,1,0.5);
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    display:none;
+    z-index: 99;
+}
+
+@media (min-width:768px) {
+    .pop-up {
+        width:50%;
+        left:35%;
+        transform:translate(-20%);
+        top:25%;
+        /* border-radius:11px; */
     }
 }
