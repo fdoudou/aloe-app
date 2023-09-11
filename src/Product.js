@@ -20,7 +20,7 @@ const Product = () => {
     }
 
     const {id} = useParams();
-    const {plantlist,cart,addToCart,removeFromCart} = useContext(MyContext);
+    const {plantlist,cart,addToCart,removeFromCart,updateQty} = useContext(MyContext);
 
     const [quantity,setQuantity] = useState(1);
 
@@ -32,21 +32,21 @@ const Product = () => {
         setQuantity(quantity - 1);
     }
 
-    const myCart = cart.map((c)=>{
+    const myCart = cart.map((c,index)=>{
         return (
-            <div className="grid-c-2" style={{height:"150px"}}>
+            <div key={index} className="grid-c-2 grid-m-2" style={{height:"150px"}}>
                 <img src={plantlist[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
 
-                <p onClick={()=>{removeFromCart(c.item)}}>
-                    <div className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name}</div>
+                <div>
+                    <div onClick={()=>{removeFromCart(index)}} className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name}</div>
                     <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plantlist[c.item].price} FCFA</div>
 
                     <div className="jma-mrg-tb">
-                        <button onClick={minusOne} className="jma-pdg-8">-</button>
-                        <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-8" value={quantity} min="1"/>
-                        <button onClick={addOne} className="jma-pdg-8">+</button>
+                        <button onClick={()=>{updateQty(index,"MINUS_ONE")}} className="jma-pdg-8">-</button>
+                        <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-8" value={c.qty} min="1"/>
+                        <button onClick={()=>{updateQty(index,"ADD_ONE")}} className="jma-pdg-8">+</button>
                     </div>
-                </p>
+                </div>
             </div>
         )
     });
@@ -121,7 +121,8 @@ const Product = () => {
 
                             <div>
                                 {myCart}
-                                <button onClick={()=>{}} className="jma-mrg-bottom jma-pdg-16 jma-anim-zoom">Acheter maintenant</button>
+                                {cart.length >= 1 && <button onClick={()=>{}} className="jma-mrg-bottom jma-pdg-16 jma-anim-zoom">Acheter maintenant</button>}
+                                {cart.length === 0 && <h2 className="jma-mrg-bottom jma-pdg-16">Votre liste de favoris est vide!</h2>}
                             </div>
                         </div>
                     </div>

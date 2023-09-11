@@ -180,21 +180,33 @@ export default function App(props) {
     const [cart,setCart] = useState([]);
 
     const addToCart = (id,qty) => {
-        //let itemId = id;
-        //const newCart = [...cart];
+        for (let c = 0; c < cart.length; c++) {
+            if (id === cart[c].item) {
+                return;
+            }
+        }
         setCart([...cart,{"item":id,"qty":qty}]);
-        //setCart([...newCart,{"item":itemId,"qty":quantity}]);
     }
 
     const removeFromCart = (id) => {
-        const oldCart = cart.splice(id,1);
+        const oldCart = [...cart]
+        oldCart.splice(id,1);
         setCart([...oldCart]);
     }
 
-    
+    const updateQty = (id,action) => {
+        let oldCart = [...cart];
+        
+        if (action === "ADD_ONE") {
+            oldCart[id].qty = oldCart[id].qty + 1;
+        } else if (action === "MINUS_ONE") {
+            oldCart[id].qty = oldCart[id].qty - 1;
+        }
+        setCart([...oldCart]);
+    }
 
     return (
-            <MyContext.Provider value={{plantlist,cart,addToCart,removeFromCart}}>
+            <MyContext.Provider value={{plantlist,cart,addToCart,removeFromCart,updateQty}}>
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}>
