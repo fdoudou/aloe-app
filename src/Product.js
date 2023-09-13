@@ -63,7 +63,7 @@ const Product = () => {
                                 <button onClick={addOne} className="jma-pdg-16">+</button>
                             </div>
 
-                            <button onClick={()=>{viewCart();addToCart(id,quantity)}} className="jma-pdg-16 jma-anim-zoom">Ajouter aux favoris</button>
+                            <button onClick={()=>{viewCart('#z-modal-popup');addToCart(id,quantity)}} className="jma-pdg-16 jma-anim-zoom">Ajouter aux favoris</button>
                         </div>
                         
                         <details className="jma-mrg-tb" open>

@@ -1,109 +1,46 @@
-import { Outlet,Link } from "react-router-dom";
+import { Outlet,Link, useParams } from "react-router-dom";
 import aloeh from "../images/aloeh.jpg";
+import { MyContext } from "../Contextor";
+import { useContext } from "react";
 import Cart from "./Cart";
 import Footer from "./Footer";
 
 const Category = () => {
-    return (
-            <>
-            <div>
-                <div style={{display:"grid",gridTemplateColumns:"20% 75%",gridGap:"20px 15px"}}>
-                    <div>
-                        <ul style={{width:"90px"}}>
-                            <li style={{width:"80px",background:"white",color:"black"}}>Category</li>
-                            <li style={{width:"80px",background:"white",color:"black"}}>Category</li>
-                            <li style={{width:"80px",background:"white",color:"black"}}>Category</li>
-                            <li style={{width:"80px",background:"white",color:"black"}}>Category</li>
-                            <li style={{width:"80px",background:"white",color:"black"}}>Category</li>
-                        </ul>
-                    </div>
-                    <div style={{borderLeft:"1px solid #ddd"}}>
-                        <h3>
-                            Welcome to Aloeh Product page!
-                        </h3>
+    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
-                        <select>
-                            <option>Filter datas</option>
-                            <option>Filter</option>
-                            <option>Filter</option>
-                            <option>Filter</option>
-                            <option>Filter</option>
-                        </select>
+    const {category} = useParams();
 
-                        <div style={{display:"grid",gridTemplateColumns:"150px 150px 150px 150px",gridGap:"20px 15px",margin:"10px 0px"}}>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                        </div>
+    function categoryProduct(plant) {
+        if (plant.category === category) {
+            return {plant};
+        }
+    }
 
-                        <div style={{display:"grid",gridTemplateColumns:"150px 150px 150px 150px",gridGap:"20px 15px",borderRadius:"11px"}}>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                        </div>
+    let productList = plantlist.filter(categoryProduct);
 
-                        <div style={{margin:"10px 0px"}}>
-                            <img style={{width:"100%",height:"100px",objectFit:"cover",borderRadius:"11px"}} src={aloeh}></img>
-                        </div>
-
-                        <div style={{display:"grid",gridTemplateColumns:"150px 150px 150px 150px",gridGap:"20px 15px"}}>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                            <div>
-                                <img src={aloeh} style={{width:"130px",height:"130px",borderRadius:"11px"}}></img>
-                                <span>ProductName</span><br/>
-                                <span>Price</span>
-                            </div>
-                        </div>
-                    </div>
+    productList.map((plant,index) => {
+        return (
+            <div key={index}>
+                <div >
+                    <Link to={`product/${index}`}>
+                        <img src={plant.images[0]} style={{width:"200px",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
+                        <p>
+                            <span>{plant.name}</span><br/>
+                            <span>{plant.price} FCFA</span>
+                        </p>
+                    </Link>
                 </div>
+                
+                <button onClick={()=>{viewCart();addToCart(index,1)}}>Ajouter aux favoris</button>
+
+            </div>
+        )
+    })
+
+    return (
+        <>
+            <div style={{maxWidth:"768px",display:"grid",gridTemplateColumns:"25% 25% 25% 25%",gridGap:"20px 15px"}}>
+                {productList}
             </div>
 
             <Cart/>

@@ -220,6 +220,14 @@ body {
     .grid-c-2 {
         grid-template-columns:auto auto;
     }
+
+    .grid-c-3 {
+        grid-template-columns:auto auto auto;
+    }
+
+    .grid-c-4 {
+        grid-template-columns:auto auto auto auto;
+    }
 }
 
 @media (max-width:790px) {

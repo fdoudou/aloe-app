@@ -10,19 +10,25 @@ const Layout = () => {
                 <span className="jma-pdg-16">
                     <Link to="/">home</Link>
                 </span>
-                <span className="jma-pdg-16">
+                {/*<span className="jma-pdg-16">
                     <Link to="/category">category</Link>
                 </span>
-                {/* <span>
+                 <span>
                     <Link to="/Product">Product</Link>
                 </span> */}
                 <span className="jma-pdg-16">
                     <Link to="/nopage">nopage</Link>
                 </span>
+
                 <span className="jma-pdg-16">
-                    <Link to="/cart">cart</Link>
+                    <Link to="/cart">category</Link>
                 </span>
-                <button className="jma-pdg-16" onClick={()=>{viewCart()}}>
+
+                <button className="jma-pdg-16" onClick={()=>{viewCart('#x-modal-popup')}}>
+                    search
+                </button>
+                
+                <button className="jma-pdg-16" onClick={()=>{viewCart('#z-modal-popup')}}>
                     cart
                 </button>
             </div>
