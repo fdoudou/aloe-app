@@ -11,19 +11,20 @@ const Category = () => {
     const {category} = useParams();
 
     function categoryProduct(plant) {
-        if (plant.category === category) {
-            return {plant};
-        }
+        // if (plant.category === category) {
+        //     return plant.category;
+        // }
+        return plant.category === category
     }
 
     let productList = plantlist.filter(categoryProduct);
 
-    productList.map((plant,index) => {
+    productList = productList.map((plant,index) => {
         return (
             <div key={index}>
                 <div >
-                    <Link to={`product/${index}`}>
-                        <img src={plant.images[0]} style={{width:"200px",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
+                    <Link to={`/product/${index}`}>
+                        <img src={plant.images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>
                             <span>{plant.price} FCFA</span>
@@ -31,20 +32,26 @@ const Category = () => {
                     </Link>
                 </div>
                 
-                <button onClick={()=>{viewCart();addToCart(index,1)}}>Ajouter aux favoris</button>
-
+                <button onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
             </div>
         )
     })
 
     return (
-        <>
-            <div style={{maxWidth:"768px",display:"grid",gridTemplateColumns:"25% 25% 25% 25%",gridGap:"20px 15px"}}>
-                {productList}
-            </div>
+        <>  
+            <div className="jma-mrg-tb">
+                <div className="jma-mrg-tb" style={{margin:"auto auto"}}>
+                    <button onClick={()=>{}}><Link to="/category/A">Explore Category A</Link></button>
+                    <button onClick={()=>{}}><Link to="/category/B">Explore Category B</Link></button>
+                    <button onClick={()=>{}}><Link to="/category/C">Explore Category C</Link></button>
+                </div>
+                <div className="grid-c-3" style={{minHeight:"450px",maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto auto"}}>
+                    {productList}
+                </div>
 
-            <Cart/>
-            <Footer/>
+                <Cart/>
+                <Footer/>
+            </div>
         </>
     )
 }

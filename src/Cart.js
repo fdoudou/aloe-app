@@ -66,7 +66,6 @@ const Cart = () => {
 
     return (
         <div>
-            <button onClick={()=>{}}><Link to="/category/A">Explore Category A</Link></button>
             <div className='modal-parent' id='z-modal-popup'>
                 <div className='modal-underlay' onClick={()=>{viewCart('#z-modal-popup')}}></div>
                     <div className='jma-modal jma-anim-right'>

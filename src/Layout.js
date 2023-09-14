@@ -20,9 +20,13 @@ const Layout = () => {
                     <Link to="/nopage">nopage</Link>
                 </span>
 
-                <span className="jma-pdg-16">
+                {/* <span className="jma-pdg-16">
                     <Link to="/cart">category</Link>
-                </span>
+                </span> */}
+
+                <span className="jma-pdg-16" onClick={()=>{}}><Link to="/category/A">category A</Link></span>
+                <span className="jma-pdg-16" onClick={()=>{}}><Link to="/category/B">category B</Link></span>
+                <span className="jma-pdg-16" onClick={()=>{}}><Link to="/category/C">category C</Link></span>
 
                 <button className="jma-pdg-8" onClick={()=>{viewCart('#x-modal-popup')}}>
                     search <svg style={{display:"inline",verticalAlign:"middle"}} xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
