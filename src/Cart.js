@@ -10,39 +10,42 @@ const Cart = () => {
 
     const [resultset,setResultset] = useState([]);
 
+    let myResultset = [];
+
+    function searchResult(plant) {
+        return plant.name.includes(query) === true;
+    }
+
     const searchItem = (event) => {
         let qu = event.target.value;
         setQuery(event.target.value);
-        let pl = []
-
-        for (let plant of plantlist) {
-            if (plant.name.includes(query)) {
-                pl.push(plant.id)
-            }
+        if (qu === "") {
+            setResultset(plantlist.filter(searchResult));
+        } else {
+            setResult();
         }
-        setResultset([...pl]);
-        if (resultset.length > 0) {
-            const myResultset = resultset.map((c,index) => {
-                return (
-                    <div key={index} className="grid-c-2 grid-m-2" style={{height:"150px"}}>
-                        <img src={plantlist[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
-
-                        <div>
-                            <div onClick={()=>{removeFromCart(index)}} className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name}</div>
-                            <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plantlist[c.item].price} FCFA</div>
-
-                            <div className="jma-mrg-tb">
-                                <button onClick={()=>{updateQty(index,"MINUS_ONE")}} className="jma-pdg-8">-</button>
-                                <input style={{width:"30px",border:"none",textAlign:"center"}} className="jma-pdg-8" value={c.qty} min="1"/>
-                                <button onClick={()=>{updateQty(index,"ADD_ONE")}} className="jma-pdg-8">+</button>
-                            </div>
-                        </div>
-                    </div>
-                )
-            });
-        }
-        
     }
+
+    const setResult = () => {
+        setResultset(plantlist.filter(searchResult));
+        //myResultset = plantlist.filter(searchResult);
+    }
+    
+    myResultset = resultset.map((plant,index) => {
+        return (
+            <Link to={`product/${index}`} key={index} className="grid-c-2 grid-m-2" style={{height:"150px"}}>
+                <img src={plant.images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+
+                <div>
+                    <div onClick={()=>{}} className="jma-mrg-tb" style={{fontSize:"16px"}}>{plant.name}
+                    </div>
+                    
+                    <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plant.price} FCFA</div>
+                </div>
+            </Link>
+        )
+    });
+        //}
 
     const myCart = cart.map((c,index)=>{
         return (
@@ -84,10 +87,10 @@ const Cart = () => {
                     <div className='jma-modal jma-anim-right'>
                         <h4>Rechercher quelquechose <button onClick={()=>{viewCart('#x-modal-popup')}}>&times;</button></h4>
                         
-                        <input className="jma-pdg-8 jma-mrg" type="search" value={query} onChange={searchItem} autoFocus/>
+                        <input style={{height:"45px",width:"250px",border:"1px solid #ddd",borderRadius:"9px"}} className="jma-pdg-8 jma-mrg" type="search" value={query} onChange={searchItem} placeholder="Tapez ici pour rechercher" autoFocus/>
                         
                         <div className="jma-mrg-16">
-                            {resultset}
+                            {myResultset}
                         </div>
 
                         <div>

@@ -11,9 +11,6 @@ const Category = () => {
     const {category} = useParams();
 
     function categoryProduct(plant) {
-        // if (plant.category === category) {
-        //     return plant.category;
-        // }
         return plant.category === category
     }
 
