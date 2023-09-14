@@ -193,7 +193,7 @@ body {
 
 .modal-underlay {
     background:rgba(0,0,1,0.5);
-    position: absolute;
+    position: fixed;
 	z-index: 33;
 	top:0px;
 	bottom:0px;
@@ -228,6 +228,10 @@ body {
     .grid-c-4 {
         grid-template-columns:auto auto auto auto;
     }
+
+    .product-img {
+        width: 460px;
+    }
 }
 
 @media (max-width:790px) {
@@ -241,10 +245,32 @@ body {
     }
 
     .jma-modal {
+        width: 94%;
+    }
+
+    .product-img {
         width: 100%;
     }
 }
 
+[class*='jma-zoom'] {
+    transition:0.3s;
+}
+
+.jma-zoom:hover {
+    fill:currentColor;
+    transform:scale(1.2,1.2);
+}
+
+.jma-zoom-out:hover {
+    fill:currentColor;
+    transform:scale(0.9,0.9);
+}
+
+ .jma-zoom-15:hover {
+    fill:currentColor;
+    transform:scale(1.5,1.5);
+}
 /* @media (min-width:768px) {
     .pop-up {
         width:50%;

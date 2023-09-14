@@ -24,6 +24,7 @@ export default function App(props) {
 
     let frontPlant = [
         {
+            id:1,
             name:"aloe",
             price:6000,
             category:"A",
@@ -38,6 +39,7 @@ export default function App(props) {
             ]
         },
         {
+            id:2,
             name:"aloe",
             price:9800,
             category:"B",
@@ -56,6 +58,7 @@ export default function App(props) {
     let plantlist = [
         
         {
+            id:3,
             name:"aloe",
             price:3500,
             category:"C",
@@ -70,6 +73,7 @@ export default function App(props) {
             ]
         },
         {
+            id:4,
             name:"aloe",
             price:15.92,
             category:"A",
@@ -84,6 +88,7 @@ export default function App(props) {
             ]
         },
         {
+            id:5,
             name:"aloe",
             price:15.92,
             category:"B",
@@ -98,6 +103,7 @@ export default function App(props) {
             ]
         },
         {
+            id:6,
             name:"aloe",
             price:15.92,
             category:"C",
@@ -112,6 +118,7 @@ export default function App(props) {
             ]
         },
         {
+            id:7,
             name:"aloe",
             price:15.92,
             category:"A",
@@ -126,6 +133,7 @@ export default function App(props) {
             ]
         },
         {
+            id:8,
             name:"aloe",
             price:15.92,
             category:"B",
@@ -140,6 +148,7 @@ export default function App(props) {
             ]
         },
     {
+            id:9,
             name:"aloe",
             price:15.92,
             category:"C",
@@ -154,6 +163,7 @@ export default function App(props) {
             ]
         },
         {
+            id:10,
             name:"aloe",
             price:15.92,
             category:"A",
@@ -168,6 +178,7 @@ export default function App(props) {
             ]
         },
         {
+            id:11,
             name:"aloe",
             price:15.92,
             category:"B",

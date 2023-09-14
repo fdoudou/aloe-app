@@ -48,7 +48,7 @@ const Home = () => {
 
     return (
         <>
-            <div>
+            <div className="jma-mrg-tb">
             <div>
                 <img src={frontimage} style={{width:"100%",height:"400px",objectFit:"cover",objectPosition:"center",borderRadius:"30px"}}></img>
                 <p>
@@ -64,9 +64,9 @@ const Home = () => {
                 {productList}
             </div>
 
-            <div>
+            {/* <div>
                 <img style={{width:"100%",height:"100px",objectFit:"cover"}} src={frontimage}></img>
-            </div>
+            </div> */}
             
             </div>
             <Cart/>
