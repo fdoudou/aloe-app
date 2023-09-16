@@ -5,19 +5,19 @@ const Footer = () => {
         <div className="jma-pdg-16" style={{width:"100%",height:"200px",background:"teal",position:"relative",bottom:"0px"}}>
             <div>
                 <span className="jma-pdg-16">
-                    <Link to="/">Home</Link>
+                    <Link to="/">Acceuil</Link>
                 </span>
                 <span className="jma-pdg-16">
-                    <Link to="/Category">Category</Link>
+                    <Link to="/Category">Categorie</Link>
                 </span>
                 {/* <span>
                     <Link to="/Product">Product</Link>
                 </span> */}
                 <span className="jma-pdg-16">
-                    <Link to="/Nopage">Nopage</Link>
+                    <Link to="/Nopage">Page d'erreur</Link>
                 </span>
                 <span className="jma-pdg-16">
-                    <Link to="/Cart">Cart</Link>
+                    <Link to="/Cart">Panier</Link>
                 </span>
             </div>
             <Outlet/>

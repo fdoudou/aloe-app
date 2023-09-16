@@ -88,15 +88,10 @@ const Cart = () => {
                         <h4>Rechercher quelquechose <button onClick={()=>{viewCart('#x-modal-popup')}}>&times;</button></h4>
                         
                         <input style={{height:"45px",width:"250px",border:"1px solid #ddd",borderRadius:"9px"}} className="jma-pdg-8 jma-mrg" type="search" value={query} onChange={searchItem} placeholder="Tapez ici pour rechercher" autoFocus/>
-                        
-                        <div className="jma-mrg-16">
-                            {myResultset}
-                        </div>
 
-                        <div>
-                            {/* {cart.length === 0 && <h2 className="jma-mrg-bottom jma-pdg-16">Vos resultats s'affichent ici!</h2>} */}
-                            
-                    </div>
+                        <div className="jma-mrg-16">
+                            { myResultset.length === 0 ? <h2 className="jma-mrg-bottom jma-pdg-16">Vos resultats de recherches s'affichent ici!</h2> : myResultset }
+                        </div>
                 </div>
             </div>
         </div>

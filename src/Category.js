@@ -37,10 +37,10 @@ const Category = () => {
     return (
         <>  
             <div className="jma-mrg-tb">
-                <div className="jma-mrg-tb" style={{margin:"auto auto"}}>
-                    <button onClick={()=>{}}><Link to="/category/A">Explore Category A</Link></button>
-                    <button onClick={()=>{}}><Link to="/category/B">Explore Category B</Link></button>
-                    <button onClick={()=>{}}><Link to="/category/C">Explore Category C</Link></button>
+                <div className="jma-mrg-tb" style={{margin:"auto auto",display:"flex",overflow:"scroll"}}>
+                    <button className="jma-mrg-tb jma-mrg-32" onClick={()=>{}}><Link to="/category/A">Plantes mixtes</Link></button>
+                    <button className="jma-mrg-tb jma-mrg-32" onClick={()=>{}}><Link to="/category/B">Plantes d'intérieur</Link></button>
+                    <button className="jma-mrg-tb jma-mrg-32" onClick={()=>{}}><Link to="/category/C">Plantes d'extérieur</Link></button>
                 </div>
                 <div className="grid-c-3" style={{minHeight:"450px",maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto auto"}}>
                     {productList}

@@ -1,4 +1,4 @@
-import { useReducer,useRef,useState } from "react";
+import { useEffect, useReducer,useRef,useState } from "react";
 import { Routes,Route } from "react-router-dom";
 import { MyContext } from "./Contextor";
 
@@ -195,56 +195,8 @@ export default function App(props) {
     ]
 
     plantlist = [...plantlist,...frontPlant];
-
-    // const [cart,setCart] = useState([{"item":0,"qty":2}]);
-
-    // const addToCart = (id,) => {
-    //     let itemId = id;
-    //     let newCart = [...cart];
-    //     setCart([...newCart,{"item":itemId,"qty":qty}]);
-    // }
-
-    // const removeFromCart = (id,olCart) => {
-    //     let oldCart = olCart.splice(id,1);
-    //     setCart([...oldCart]);
-    // }
-    
-
-    // function handleCart(state = cart,action) {
-    //     switch (action.type) {
-    //         case "ADD_TO_CART":
-    //             return [...state,...action.payloads];
-    //         case "REMOVE_FROM_CART":
-    //             let newcart = state.splice(action.id,1);
-    //             return newcart
-    //         case "INCREMENT_QTY":
-
-    //         case "DECREMENT_QTY":
-                
-    //         //     break;
-    //         default:
-    //             return state;
-    //     }
-    // }
-
-    // function handleFilter(state = plantlist,action) {
-    //     switch (action.type) {
-    //         case "SEARCH_ITEM":
-    //             return [...state,...action.payloads];
-    //         case "FILTER_DESC":
-    //             let newcart = state.splice(action.id,1);
-    //             return newcart
-    //         case "FILTER_ASC":
-                
-    //             break;
-    //         default:
-    //             return state;
-    //     }
-    // }
-
-    //const initialState = 
+ 
     function viewCart (target) {
-        //document.querySelector(target).classList.toggle('jma-show');
         if (document.querySelector(target).className === 'modal-parent') {
             document.querySelector(target).className = 'jma-show';
         }   else {
@@ -252,8 +204,9 @@ export default function App(props) {
         }
     }
     
+    let cstate = localStorage.getItem('cart') == null ? [] : JSON.parse(localStorage.getItem('cart'));
     
-    const [cart,setCart] = useState([]);
+    const [cart,setCart] = useState(cstate);
 
     const addToCart = (id,qty) => {
         for (let c = 0; c < cart.length; c++) {
@@ -269,6 +222,12 @@ export default function App(props) {
         oldCart.splice(id,1);
         setCart([...oldCart]);
     }
+
+    useEffect (
+        ()=>{
+            localStorage.setItem('cart',JSON.stringify([...cart]));
+        },[cart]
+    )
 
     const updateQty = (id,action) => {
         let oldCart = [...cart];
