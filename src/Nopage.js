@@ -6,9 +6,9 @@ const Nopage = () => {
     return (
         <>
             <div>
-                <h3>
-                    Erreur <br/>
-                    Désolé, cette page est introuvable!
+                <h3 className="jma-pdg-16">
+                    <p>Erreur</p>
+                    <p>Désolé, cette page est introuvable!</p>
                 </h3>
             </div>
             <Cart/>

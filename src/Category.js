@@ -42,7 +42,7 @@ const Category = () => {
                     <button className="jma-mrg-tb jma-mrg-32" onClick={()=>{}}><Link to="/category/B">Plantes d'intérieur</Link></button>
                     <button className="jma-mrg-tb jma-mrg-32" onClick={()=>{}}><Link to="/category/C">Plantes d'extérieur</Link></button>
                 </div>
-                <div className="grid-c-3" style={{minHeight:"450px",maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto auto"}}>
+                <div className="grid-c-3" style={{minHeight:"450px",maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto 30px",justifyContent:"center"}}>
                     {productList}
                 </div>
 

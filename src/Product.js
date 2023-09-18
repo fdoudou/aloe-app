@@ -1,5 +1,4 @@
 import { Outlet,Link,useParams } from "react-router-dom";
-import aloeh from "../images/aloeh.jpg";
 import { MyContext } from "../Contextor";
 import { useContext } from "react";
 import Footer from "./Footer";
@@ -36,8 +35,8 @@ const Product = () => {
     return (
             <>  
                 <div className="grid-c-2 column-gap-3 jma-mrg-tb " style={{position:"relative",margin:"auto 50px",transform:""}}>
-                    <div className="product-img" style={{height:"550px"}}>
-                        <img src={plantlist[id].images[0]} style={{width:"100%",height:"450px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+                    <div className="product-img">
+                        <img src={plantlist[id].images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <div style={{display:"flex",width:"100%",height:"150px",overflowX:"scroll"}}>
                             {imagesThumbnails}
                         </div>
@@ -63,7 +62,7 @@ const Product = () => {
                                 <button onClick={addOne} className="jma-pdg-16">+</button>
                             </div>
 
-                            <button onClick={()=>{viewCart('#z-modal-popup');addToCart(id,quantity)}} className="jma-pdg-16 jma-zoom-out">Ajouter aux favoris</button>
+                            <button onClick={()=>{viewCart('#z-modal-popup');addToCart(parseInt(id),quantity)}} className="jma-pdg-16 jma-zoom-out">Ajouter aux favoris</button>
                         </div>
                         
                         <details className="jma-mrg-tb" open>

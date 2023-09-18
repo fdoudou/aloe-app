@@ -25,7 +25,7 @@ export default function App(props) {
     let frontPlant = [
         {
             id:1,
-            name:"aloe",
+            name:"aloe a",
             price:6000,
             category:"A",
             dimensions:"18*35*21",
@@ -40,7 +40,7 @@ export default function App(props) {
         },
         {
             id:2,
-            name:"aloe",
+            name:"aloe b",
             price:9800,
             category:"B",
             dimensions:"18*35*21",
@@ -59,7 +59,7 @@ export default function App(props) {
         
         {
             id:3,
-            name:"aloe",
+            name:"aloe c",
             price:3500,
             category:"C",
             dimensions:"18*35*21",
@@ -74,7 +74,7 @@ export default function App(props) {
         },
         {
             id:4,
-            name:"aloe",
+            name:"aloe d",
             price:15.92,
             category:"A",
             dimensions:"18*35*21",
@@ -89,7 +89,7 @@ export default function App(props) {
         },
         {
             id:5,
-            name:"aloe",
+            name:"aloe e",
             price:15.92,
             category:"B",
             dimensions:"18*35*21",
@@ -104,7 +104,7 @@ export default function App(props) {
         },
         {
             id:6,
-            name:"aloe",
+            name:"aloe f",
             price:15.92,
             category:"C",
             dimensions:"18*35*21",
@@ -119,7 +119,7 @@ export default function App(props) {
         },
         {
             id:7,
-            name:"aloe",
+            name:"aloe g",
             price:15.92,
             category:"A",
             dimensions:"18*35*21",
@@ -134,7 +134,7 @@ export default function App(props) {
         },
         {
             id:8,
-            name:"aloe",
+            name:"aloe h",
             price:15.92,
             category:"B",
             dimensions:"18*35*21",
@@ -149,7 +149,7 @@ export default function App(props) {
         },
     {
             id:9,
-            name:"aloe",
+            name:"aloe i",
             price:15.92,
             category:"C",
             dimensions:"18*35*21",
@@ -164,22 +164,22 @@ export default function App(props) {
         },
         {
             id:10,
-            name:"aloe",
+            name:"aloe j",
             price:15.92,
             category:"A",
             dimensions:"18*35*21",
             availableQty:40,
             description:"Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla Blabla blabla blabla",
             images: [
-                aloe8,
-                aloe8,
-                aloe8,
-                aloe8
+                aloe1,
+                aloe1,
+                aloe1,
+                aloe1
             ]
         },
         {
             id:11,
-            name:"aloe",
+            name:"aloe k",
             price:15.92,
             category:"B",
             dimensions:"18*35*21",

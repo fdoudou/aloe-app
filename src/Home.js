@@ -51,7 +51,7 @@ const Home = () => {
             <div className="jma-mrg-tb">
             <div>
                 <img src={frontimage} style={{width:"100%",height:"400px",objectFit:"cover",objectPosition:"center",borderRadius:"30px"}}></img>
-                <p>
+                <p className="jma-mrg-16">
                     Welcome to Aloeh!
                 </p>
             </div>

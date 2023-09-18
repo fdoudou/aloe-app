@@ -10,9 +10,6 @@ const Footer = () => {
                 <span className="jma-pdg-16">
                     <Link to="/Category">Categorie</Link>
                 </span>
-                {/* <span>
-                    <Link to="/Product">Product</Link>
-                </span> */}
                 <span className="jma-pdg-16">
                     <Link to="/Nopage">Page d'erreur</Link>
                 </span>
