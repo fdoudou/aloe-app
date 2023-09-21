@@ -54,6 +54,9 @@ const Checkout = () => {
 
                     <div style={{height:"255px"}}>
                         <div>
+                            <span className="jma-large jma-pdg-tb jma-pdg-16" style={{fontSize:"22px"}}>Selectionnez une méthode de paiement:</span>
+                        </div>
+                        <div>
                             <label for='v-type-2'>
                                 <img className="jma-zoom-out" src={wari} style={{width:"100px",height:"100px",objectFit:"contain",borderRadius:"180px"}}/>
                             </label>
@@ -75,7 +78,7 @@ const Checkout = () => {
             </div>
 
             <Cart/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     )
 }

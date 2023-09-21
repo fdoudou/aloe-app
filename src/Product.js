@@ -6,7 +6,15 @@ import Cart from "./Cart";
 import "../style.css";
 import { useState } from "react";
 
-
+function goSlideTo (pos,viewWidth,slideSmooth) {
+        var slideElement = document.querySelector('.scrollin-img');
+        slideElement.scroll({
+            top: 0,
+            left: pos*viewWidth,
+            behavior: slideSmooth
+        }
+    );
+}
 
 const Product = () => {
 
@@ -27,7 +35,13 @@ const Product = () => {
 
     const imagesThumbnails = plantlist[id].images.map((img,index)=> {
         return (
-            <img key={index} className="jma-mrg" src={img} style={{width:"100px",height:"100px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+            <img onClick={()=>{goSlideTo(index,400,'auto')}} key={index} className="jma-mrg" src={img} style={{width:"100px",height:"100px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+        )
+    })
+
+    const fullSizeImages = plantlist[id].images.map((img,index)=> {
+        return (
+            <img key={index} className="jma-mrg" src={img} style={{objectFit:"contain",objectPosition:"center",borderRadius:"15px"}}></img>
         )
     })
 
@@ -36,7 +50,10 @@ const Product = () => {
             <>  
                 <div className="grid-c-2 column-gap-3 jma-mrg-tb " style={{position:"relative",margin:"auto 50px",transform:""}}>
                     <div className="product-img">
-                        <img src={plantlist[id].images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
+                        <div className="scrollin-img">
+                            {fullSizeImages}
+                        </div>
+                        {/* <img src={plantlist[id].images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img> */}
                         <div style={{display:"flex",width:"100%",height:"150px",overflowX:"scroll"}}>
                             {imagesThumbnails}
                         </div>

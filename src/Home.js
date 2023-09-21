@@ -14,7 +14,7 @@ const Home = () => {
             <div key={index}>
                 <div >
                     <Link to={`product/${index}`}>
-                        <img src={plant.images[0]} style={{width:"350px",height:"300px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
+                        <img className="front-img" src={plant.images[0]} style={{objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>
                             <span>{plant.price} FCFA</span>
@@ -51,22 +51,18 @@ const Home = () => {
             <div className="jma-mrg-tb">
             <div style={{height:"430px"}}>
                 <img src={frontimage} style={{width:"100%",height:"400px",objectFit:"cover",objectPosition:"center",borderRadius:"30px"}}></img>
-                <p className="jma-mrg-16" style={{height:"30px",width:"95%",bottom:"165px",position:"relative",textShadow:"10px 0px 20px black",color:"white",fontSize:"30px",textOverflow:"ellipsis"}}>
+                <p className="jma-mrg-16" style={{height:"30px",width:"95%",top:"195px",position:"absolute",textShadow:"10px 0px 20px black",color:"white",fontSize:"30px",textOverflow:"ellipsis"}}>
                     Bienvenu à Aloeh!    Aloe est une plateforme qui commercialise des plantes de type aloe vera d'excellentes qualités!
                 </p>
             </div>
 
-            <div className="grid-c-2" style={{maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto 50px",justifyContent:"center"}}>
+            <div className="grid-c-2" style={{maxWidth:"768px",gridGap:"20px 15px",position:"relative",margin:"auto 50px",justifyContent:"center",justifyItems:"center"}}>
                 {firstRow}
             </div>
 
             <div className="grid-c-3" style={{maxWidth:"768px",position:"relative",margin:"auto 50px"}}>
                 {productList}
             </div>
-
-            {/* <div>
-                <img style={{width:"100%",height:"100px",objectFit:"cover"}} src={frontimage}></img>
-            </div> */}
             
             </div>
             <Cart/>
