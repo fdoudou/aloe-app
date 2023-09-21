@@ -49,10 +49,10 @@ const Home = () => {
     return (
         <>
             <div className="jma-mrg-tb">
-            <div>
+            <div style={{height:"430px"}}>
                 <img src={frontimage} style={{width:"100%",height:"400px",objectFit:"cover",objectPosition:"center",borderRadius:"30px"}}></img>
-                <p className="jma-mrg-16">
-                    Welcome to Aloeh!
+                <p className="jma-mrg-16" style={{height:"30px",width:"95%",bottom:"165px",position:"relative",textShadow:"10px 0px 20px black",color:"white",fontSize:"30px",textOverflow:"ellipsis"}}>
+                    Bienvenu à Aloeh!    Aloe est une plateforme qui commercialise des plantes de type aloe vera d'excellentes qualités!
                 </p>
             </div>
 

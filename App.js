@@ -19,6 +19,7 @@ import Nopage from "./src/Nopage";
 import Layout from "./src/Layout";
 import Cart from "./src/Cart";
 import Footer from "./src/Footer";
+import Checkout from "./src/Checkout";
 
 export default function App(props) {
 
@@ -75,7 +76,7 @@ export default function App(props) {
         {
             id:4,
             name:"aloe d",
-            price:15.92,
+            price:4000,
             category:"A",
             dimensions:"18*35*21",
             availableQty:40,
@@ -90,7 +91,7 @@ export default function App(props) {
         {
             id:5,
             name:"aloe e",
-            price:15.92,
+            price:3500,
             category:"B",
             dimensions:"18*35*21",
             availableQty:40,
@@ -105,7 +106,7 @@ export default function App(props) {
         {
             id:6,
             name:"aloe f",
-            price:15.92,
+            price:3000,
             category:"C",
             dimensions:"18*35*21",
             availableQty:40,
@@ -120,7 +121,7 @@ export default function App(props) {
         {
             id:7,
             name:"aloe g",
-            price:15.92,
+            price:5500,
             category:"A",
             dimensions:"18*35*21",
             availableQty:40,
@@ -135,7 +136,7 @@ export default function App(props) {
         {
             id:8,
             name:"aloe h",
-            price:15.92,
+            price:3500,
             category:"B",
             dimensions:"18*35*21",
             availableQty:40,
@@ -150,7 +151,7 @@ export default function App(props) {
     {
             id:9,
             name:"aloe i",
-            price:15.92,
+            price:6000,
             category:"C",
             dimensions:"18*35*21",
             availableQty:40,
@@ -165,7 +166,7 @@ export default function App(props) {
         {
             id:10,
             name:"aloe j",
-            price:15.92,
+            price:5000,
             category:"A",
             dimensions:"18*35*21",
             availableQty:40,
@@ -180,7 +181,7 @@ export default function App(props) {
         {
             id:11,
             name:"aloe k",
-            price:15.92,
+            price:3500,
             category:"B",
             dimensions:"18*35*21",
             availableQty:40,
@@ -257,6 +258,9 @@ export default function App(props) {
                         
                         </Route>
                         <Route path="*" element={<Nopage/>}>
+                        
+                        </Route>
+                        <Route path="checkout" element={<Checkout/>}>
                         
                         </Route>
                     </Route>

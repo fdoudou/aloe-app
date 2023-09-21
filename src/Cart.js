@@ -72,11 +72,11 @@ const Cart = () => {
             <div className='modal-parent' id='z-modal-popup'>
                 <div className='modal-underlay' onClick={()=>{viewCart('#z-modal-popup')}}></div>
                     <div className='jma-modal jma-anim-right'>
-                        <h4>My Cart <span style={{background:"teal",borderRadius:"18px",color:"white",padding:"3px 5px",fontSize:"10px"}}>{cart.length}</span> <button onClick={()=>{viewCart('#z-modal-popup')}}>&times;</button></h4>
+                        <h4>Mes favoris <span style={{background:"teal",borderRadius:"18px",color:"white",padding:"3px 5px",fontSize:"10px"}}>{cart.length}</span> <button onClick={()=>{viewCart('#z-modal-popup')}}>&times;</button></h4>
                             
                         <div>
                             {myCart}
-                            {cart.length >= 1 && <button onClick={()=>{}} className="jma-mrg-tb jma-pdg-16 jma-zoom-out">Acheter maintenant</button>}
+                            {cart.length >= 1 && <Link to="/checkout"><button className="jma-mrg-tb jma-pdg-16 jma-zoom-out">Acheter maintenant</button></Link>}
                             {cart.length === 0 && <h2 className="jma-mrg-bottom jma-pdg-16">Votre liste de favoris est vide!</h2>}
                     </div>
                 </div>
