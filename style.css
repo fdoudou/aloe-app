@@ -240,6 +240,7 @@ body {
 }
 
 @media (min-width:791px) {
+
     .grid-c-2 {
         grid-template-columns:auto auto;
     }
@@ -294,6 +295,11 @@ body {
 }
 
 @media (max-width:790px) {
+    .fav-btn {
+        width: 100%;
+        padding: 16px;
+    }
+
     [class*='grid-c-'] {
         grid-template-columns:100% ;
         gap: 10px 0px;
