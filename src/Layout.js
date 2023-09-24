@@ -16,7 +16,7 @@ const Layout = () => {
 
     return (
         <>
-            <div style={{background:"teal",zIndex:"9"}}>
+            <div style={{background:"teal",zIndex:"9",position:"sticky",top:"0px"}}>
                 <div className="jma-pdg-16 jma-mrg- flex-header">
                     <span className="jma-pdg-16"><Link to="/">Acceuil</Link></span>
                     <span className="jma-pdg-16" onClick={()=>{}}><Link to="/category/B">Plantes d'intérieur</Link></span>
@@ -51,12 +51,12 @@ const Layout = () => {
             <div className='modal-parent'  id="c-modal-popup">
                 <div className='modal-underlay' onClick={()=>{viewCart('#c-modal-popup')}}></div>
                 <div className='jma-modal jma-anim-right overlay-content'>
-                    <span className="jma-pdg-16"><Link style={{color:"teal"}} to="/">Acceuil</Link></span>
-                    <span className="jma-pdg-16" onClick={()=>{}}><Link style={{color:"teal"}} to="/category/B">Plantes d'intérieur</Link></span>
-                    <span className="jma-pdg-16" onClick={()=>{}}><Link style={{color:"teal"}} to="/category/C">Plantes d'extérieur</Link></span>
-                    <span className="jma-pdg-16" onClick={()=>{}}><Link style={{color:"teal"}} to="/category/A">Plantes mixtes</Link></span>
-                    <span className="jma-pdg-16"><Link style={{color:"teal"}} to="/nopage">Page d'erreur</Link></span>
-                    <button style={{fontSize:"16px"}} onClick={()=>{viewCart('#c-modal-popup')}}>&times;</button>
+                    <span className="jma-pdg-16" onClick={()=>{viewCart('#c-modal-popup')}}><Link style={{color:"teal"}} to="/">Acceuil</Link></span>
+                    <span className="jma-pdg-16" onClick={()=>{viewCart('#c-modal-popup')}}><Link style={{color:"teal"}} to="/category/B">Plantes d'intérieur</Link></span>
+                    <span className="jma-pdg-16" onClick={()=>{viewCart('#c-modal-popup')}}><Link style={{color:"teal"}} to="/category/C">Plantes d'extérieur</Link></span>
+                    <span className="jma-pdg-16" onClick={()=>{viewCart('#c-modal-popup')}}><Link style={{color:"teal"}} to="/category/A">Plantes mixtes</Link></span>
+                    <span className="jma-pdg-16" onClick={()=>{viewCart('#c-modal-popup')}}><Link style={{color:"teal"}} to="/nopage">Page d'erreur</Link></span>
+                    <button style={{fontSize:"16px",position:"absolute",top:"16px",right:"16px"}} onClick={()=>{viewCart('#c-modal-popup')}}>&times;</button>
                 </div>
             </div>
             <Outlet/>

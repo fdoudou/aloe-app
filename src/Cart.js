@@ -76,7 +76,11 @@ const Cart = () => {
                             
                         <div>
                             {myCart}
-                            {cart.length >= 1 && <Link to="/checkout"><button className="jma-mrg-tb jma-pdg-16 jma-zoom-out">Acheter maintenant</button></Link>}
+                            {cart.length >= 1 &&
+                            <div className="b-btn">
+                                <Link to="/checkout">
+                                <button className="jma-mrg-tb jma-pdg-16 jma-zoom-out">Acheter maintenant</button></Link>
+                            </div>}
                             {cart.length === 0 && <h2 className="jma-mrg-bottom jma-pdg-16">Votre liste de favoris est vide!</h2>}
                     </div>
                 </div>

@@ -4,10 +4,10 @@ body {
     box-sizing: border-box;
 }
 
-/* button {
-    background: rgb(25,103,210);
-    color: #fff;
-} */
+button {
+    background: rgb(44, 175, 162);
+    /* color: #fff; */
+}
 
 .jma-hide {
     display:none;
@@ -235,8 +235,20 @@ body {
     vertical-align:middle
 }
 
+.b-btn {
+    position: sticky;
+    bottom: 3px;
+    background: #fff;
+    width: 100%;
+}
+
 .c-btn {
     background: transparent;
+}
+
+.menu {
+    display: inline;
+    width: 75px;
 }
 
 @media (min-width:791px) {
@@ -295,6 +307,10 @@ body {
 }
 
 @media (max-width:790px) {
+    .b-btn > a button {
+        width: 100%;
+    }
+
     .fav-btn {
         width: 100%;
         padding: 16px;
@@ -348,7 +364,13 @@ body {
     }
 
     .overlay-content {
-        display:inline-block;
+        display:block;
+        text-align:center;
+    }
+
+    .overlay-content>span {
+        display:block;
+        font-size: 18px;
     }
 
     .m-button {

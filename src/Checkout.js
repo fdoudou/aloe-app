@@ -71,7 +71,7 @@ const Checkout = () => {
                         </div>
                     </div>
                     
-                    <button className="jma-large jma-pdg-16 jma-zoom-out" style={{width:"150px"}}>
+                    <button className="fav-btn jma-large jma-pdg-16 jma-zoom-out" style={{minWidth:"200px"}}>
                         Payer
                     </button>
                 </div>

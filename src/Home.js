@@ -22,7 +22,7 @@ const Home = () => {
                     </Link>
                 </div>
                 
-                <button className="fav-btn" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
+                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
             </div>
         )
     })
@@ -40,7 +40,7 @@ const Home = () => {
                     </Link>
                 </div>
                 
-                <button className="fav-btn" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
+                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
 
             </div>
         )
