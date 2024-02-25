@@ -7,13 +7,13 @@ import Footer from "./Footer";
 
 const Home = () => {
 
-    const {plantlist,frontPlant,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
+    const {plantlist,allPlant,frontPlant,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
     const firstRow = frontPlant.map((plant,index) => {
         return (
             <div key={index}>
                 <div >
-                    <Link to={`product/${index}`}>
+                    <Link to={`product/${plant.id}`}>
                         <img className="front-img" src={plant.images[0]} style={{objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>
@@ -22,7 +22,7 @@ const Home = () => {
                     </Link>
                 </div>
                 
-                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
+                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(plant.id,1)}}>Ajouter aux favoris</button>
             </div>
         )
     })
@@ -31,7 +31,7 @@ const Home = () => {
         return (
             <div key={index} className="jma-mrg-tb">
                 <div >
-                    <Link to={`product/${index}`}>
+                    <Link to={`product/${plant.id}`}>
                         <img src={plant.images[0]} style={{width:"100%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>
@@ -40,7 +40,7 @@ const Home = () => {
                     </Link>
                 </div>
                 
-                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(index,1)}}>Ajouter aux favoris</button>
+                <button className="fav-btn jma-zoom-out" onClick={()=>{viewCart('#z-modal-popup');addToCart(plant.id,1)}}>Ajouter aux favoris</button>
 
             </div>
         )

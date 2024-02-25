@@ -6,7 +6,7 @@ import Cart from "./Cart";
 import Footer from "./Footer";
 
 const Category = () => {
-    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
+    const {allPlant,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
     const {category} = useParams();
 
@@ -14,13 +14,13 @@ const Category = () => {
         return plant.category === category
     }
 
-    let productList = plantlist.filter(categoryProduct);
+    let productList = allPlant.filter(categoryProduct);
 
     productList = productList.map((plant,index) => {
         return (
             <div key={index}>
                 <div >
-                    <Link to={`/product/${index}`}>
+                    <Link to={`/product/${plant.id}`}>
                         <img src={plant.images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img>
                         <p>
                             <span>{plant.name}</span><br/>

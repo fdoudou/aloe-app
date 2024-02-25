@@ -19,7 +19,7 @@ function goSlideTo (pos,viewWidth,slideSmooth) {
 const Product = () => {
 
     const {id} = useParams();
-    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
+    const {allPlant,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
     const [quantity,setQuantity] = useState(1);
 
@@ -33,13 +33,13 @@ const Product = () => {
 
     
 
-    const imagesThumbnails = plantlist[id].images.map((img,index)=> {
+    const imagesThumbnails = allPlant[id].images.map((img,index)=> {
         return (
             <img onClick={()=>{goSlideTo(index,400,'auto')}} key={index} className="jma-mrg" src={img} style={{width:"100px",height:"100px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
         )
     })
 
-    const fullSizeImages = plantlist[id].images.map((img,index)=> {
+    const fullSizeImages = allPlant[id].images.map((img,index)=> {
         return (
             <img key={index} className="jma-mrg" src={img} style={{objectFit:"contain",objectPosition:"center",borderRadius:"15px"}}></img>
         )
@@ -53,7 +53,7 @@ const Product = () => {
                         <div className="scrollin-img">
                             {fullSizeImages}
                         </div>
-                        {/* <img src={plantlist[id].images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img> */}
+                        {/* <img src={allPlant[id].images[0]} style={{width:"90%",height:"250px",objectFit:"cover",objectPosition:"center",borderRadius:"15px"}}></img> */}
                         <div style={{display:"flex",width:"100%",height:"150px",overflowX:"scroll"}}>
                             {imagesThumbnails}
                         </div>
@@ -62,13 +62,13 @@ const Product = () => {
                     <div>
                         <div>
                         <p>
-                            <div className="jma-mrg-tb" style={{fontSize:"32px"}}>{plantlist[id].name}</div>
-                            <div className="jma-mrg-tb" style={{fontSize:"20px"}}>{plantlist[id].price} FCFA</div>
+                            <div className="jma-mrg-tb" style={{fontSize:"32px"}}>{allPlant[id].name}</div>
+                            <div className="jma-mrg-tb" style={{fontSize:"20px"}}>{allPlant[id].price} FCFA</div>
                         </p>
 
                         <div>
-                            <p>Quantité disponible: {plantlist[id].availableQty}</p>
-                            <p>Dimensions: {plantlist[id].dimensions}</p>
+                            <p>Quantité disponible: {allPlant[id].availableQty}</p>
+                            <p>Dimensions: {allPlant[id].dimensions}</p>
                         </div>
                         </div>
 
@@ -90,7 +90,7 @@ const Product = () => {
                             </summary>
                             
                             <p className="jma-pdg-tb">
-                                {plantlist[id].description}
+                                {allPlant[id].description}
                             </p>
                         </details>
                         <p>

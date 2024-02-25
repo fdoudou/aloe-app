@@ -1,12 +1,43 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
     background: rgb(44, 175, 162);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
     /* color: #fff; */
+}
+
+.cart-svg {
+    color:#c0c0c0;
+    transform: translateX(100px);
+    animation: run 1.5s ease-in-out 0s infinite alternate;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+
+@keyframes run {
+    0%{
+        transform: translateX(200px);
+    }
+
+    0%{
+        transform: translateX(100px);
+    }
+
+    100%{
+        transform: translateX(200px);
+    }
 }
 
 .jma-hide {
@@ -232,11 +263,11 @@ button {
 
 .jma-svg {
     display:inline;
-    vertical-align:middle
+    vertical-align:middle;
 }
 
 .b-btn {
-    position: sticky;
+    position: fixed;
     bottom: 3px;
     background: #fff;
     width: 100%;
@@ -307,7 +338,7 @@ button {
 }
 
 @media (max-width:790px) {
-    .b-btn > a button {
+    .b-btn > a button,.b-btn > button {
         width: 100%;
     }
 

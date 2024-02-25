@@ -1,6 +1,7 @@
 import { useEffect, useReducer,useRef,useState } from "react";
 import { Routes,Route } from "react-router-dom";
 import { MyContext } from "./Contextor";
+import "./style.css";
 
 import aloe1 from "./images/aloe-1.png";
 import aloe2 from "./images/aloe-2.png";
@@ -25,7 +26,7 @@ export default function App(props) {
 
     let frontPlant = [
         {
-            id:1,
+            id:0,
             name:"aloe a",
             price:6000,
             category:"A",
@@ -40,7 +41,7 @@ export default function App(props) {
             ]
         },
         {
-            id:2,
+            id:1,
             name:"aloe b",
             price:9800,
             category:"B",
@@ -59,7 +60,7 @@ export default function App(props) {
     let plantlist = [
         
         {
-            id:3,
+            id:2,
             name:"aloe c",
             price:3500,
             category:"C",
@@ -74,7 +75,7 @@ export default function App(props) {
             ]
         },
         {
-            id:4,
+            id:3,
             name:"aloe d",
             price:4000,
             category:"A",
@@ -89,7 +90,7 @@ export default function App(props) {
             ]
         },
         {
-            id:5,
+            id:4,
             name:"aloe e",
             price:3500,
             category:"B",
@@ -104,7 +105,7 @@ export default function App(props) {
             ]
         },
         {
-            id:6,
+            id:5,
             name:"aloe f",
             price:3000,
             category:"C",
@@ -119,7 +120,7 @@ export default function App(props) {
             ]
         },
         {
-            id:7,
+            id:6,
             name:"aloe g",
             price:5500,
             category:"A",
@@ -134,7 +135,7 @@ export default function App(props) {
             ]
         },
         {
-            id:8,
+            id:7,
             name:"aloe h",
             price:3500,
             category:"B",
@@ -148,8 +149,8 @@ export default function App(props) {
                 aloe8
             ]
         },
-    {
-            id:9,
+        {
+            id:8,
             name:"aloe i",
             price:6000,
             category:"C",
@@ -164,7 +165,7 @@ export default function App(props) {
             ]
         },
         {
-            id:10,
+            id:9,
             name:"aloe j",
             price:5000,
             category:"A",
@@ -179,7 +180,7 @@ export default function App(props) {
             ]
         },
         {
-            id:11,
+            id:10,
             name:"aloe k",
             price:3500,
             category:"B",
@@ -195,8 +196,8 @@ export default function App(props) {
         }
     ]
 
-    plantlist = [...plantlist,...frontPlant];
- 
+    const allPlant = [...frontPlant,...plantlist];
+
     function viewCart (target) {
         if (document.querySelector(target).className === 'modal-parent') {
             document.querySelector(target).className = 'jma-show';
@@ -242,7 +243,7 @@ export default function App(props) {
     }
 
     return (
-            <MyContext.Provider value={{plantlist,frontPlant,cart,addToCart,removeFromCart,updateQty,viewCart}}>
+            <MyContext.Provider value={{allPlant,plantlist,frontPlant,cart,addToCart,removeFromCart,updateQty,viewCart}}>
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<Home/>}>

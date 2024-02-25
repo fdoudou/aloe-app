@@ -10,20 +10,22 @@ import om from "../assets/om.jpeg";
 import wari from "../assets/wari.jpeg";
 
 const Checkout = () => {
-    const {plantlist,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
+    const {allPlant,cart,addToCart,removeFromCart,updateQty,viewCart} = useContext(MyContext);
 
     let sumPrice = 0;
 
-    const myCart = cart.map((c,index)=>{
-        sumPrice += plantlist[c.item].price;
+    const myCheckoutCart = cart.map((c,index)=>{
+        sumPrice += allPlant[c.item].price;
         return (
             <div key={index} className="grid-c-2 grid-m-2" style={{height:"150px",width:"100%"}}>
-                <img src={plantlist[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+                <Link to={`/product/${c.item}`}>
+                    <img src={allPlant[c.item].images[0]} style={{width:"115px",height:"115px",objectFit:"cover",objectPosition:"",borderRadius:"15px"}}></img>
+                </Link>
 
                 <div>
-                    <div onClick={()=>{}} className="jma-mrg-tb" style={{fontSize:"16px"}}>{plantlist[c.item].name} <button style={{position:"relative",right:"16px"}} onClick={()=>{removeFromCart(index)}}>supprimer &times;</button></div>
+                    <div onClick={()=>{}} className="jma-mrg-tb" style={{fontSize:"16px"}}><Link to={`/product/${c.item}`}>{allPlant[c.item].name}</Link> <button style={{position:"relative",right:"16px"}} onClick={()=>{removeFromCart(index)}}>supprimer &times;</button></div>
                     
-                    <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{plantlist[c.item].price} FCFA</div>
+                    <div className="jma-mrg-tb" style={{fontSize:"18px"}}>{allPlant[c.item].price} FCFA</div>
 
                     <div className="jma-mrg-tb">
                         <button onClick={()=>{updateQty(index,"MINUS_ONE")}} className="jma-pdg-8">-</button>
@@ -42,7 +44,7 @@ const Checkout = () => {
             </div>
             <div className="grid-c-2 jma-mrg">
                 <div >
-                    {myCart}
+                    {myCheckoutCart}
                 </div>
                 <div>
                     <p>
